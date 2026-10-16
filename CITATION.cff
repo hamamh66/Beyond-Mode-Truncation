@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Beyond Mode Truncation: Entanglement Certification from Finite Optical Apertures — code and results"
+version: 1.0.0
+license: MIT
+authors:
+  - family-names: Alsharabi
+    given-names: Naif A.
+  - family-names: Zayoud
+    given-names: Rahma
+  - family-names: Guizani
+    given-names: Sghaier
+  - family-names: Hamam
+    given-names: Habib
+repository-code: "https://github.com/hamamh66/Beyond-Mode-Truncation"
+keywords: [spatial entanglement, finite apertures, mode leakage, prolate concentration, semidefinite programming, quantum certification]

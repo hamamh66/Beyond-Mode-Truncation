@@ -1,0 +1,46 @@
+{
+ "results": [
+  {
+   "primal": 5.651123395270957,
+   "lb": 432912.2482812528,
+   "lb_raw": 432912.2482812528,
+   "status": "NumericalError (regularized retry)",
+   "case": "w=0.0025"
+  },
+  {
+   "primal": 4.171460116127154,
+   "lb": 857360.5791074507,
+   "lb_raw": 857360.5791074507,
+   "status": "NumericalError",
+   "case": "w=0.01"
+  },
+  {
+   "primal": 5.816490681867256,
+   "lb": 142591.68899435693,
+   "lb_raw": 142591.68899435693,
+   "status": "NumericalError",
+   "case": "coherent product 0.05"
+  },
+  {
+   "primal": 6.005148229782343,
+   "lb": 134531.18746517817,
+   "lb_raw": 134531.18746517817,
+   "status": "NumericalError",
+   "case": "coherent product 0.10"
+  },
+  {
+   "primal": 6.293736094065714,
+   "lb": 4509419.49281567,
+   "lb_raw": 4509419.49281567,
+   "status": "NumericalError",
+   "case": "coherent product 0.20"
+  },
+  {
+   "primal": 6.078965703994657,
+   "lb": 516588.3833021528,
+   "lb_raw": 516588.3833021528,
+   "status": "NumericalError",
+   "case": "mixture"
+  }
+ ]
+}

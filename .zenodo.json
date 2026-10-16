@@ -1,0 +1,14 @@
+{
+  "title": "Beyond Mode Truncation: Entanglement Certification from Finite Optical Apertures — code and results",
+  "upload_type": "software",
+  "description": "Reference implementation and raw results for leakage-aware certification of spatial entanglement from finite near- and far-field camera apertures: concentration-based leakage bounds, outcome-resolved second-order-cone relaxations, validated dual bounds, and a continuum certificate.",
+  "creators": [
+    {"name": "Alsharabi, Naif A.", "affiliation": "University of Ha'il"},
+    {"name": "Zayoud, Rahma", "affiliation": "Université de Moncton"},
+    {"name": "Guizani, Sghaier", "affiliation": "Alfaisal University"},
+    {"name": "Hamam, Habib", "affiliation": "Université de Moncton"}
+  ],
+  "license": "MIT",
+  "keywords": ["spatial entanglement", "finite apertures", "mode leakage", "prolate concentration", "semidefinite programming", "quantum certification"],
+  "version": "1.0.0"
+}
