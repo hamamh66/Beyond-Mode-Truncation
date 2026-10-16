@@ -22,7 +22,7 @@ class Setup:
                     rows.append(np.kron(A[i], A[j]).T.flatten(order='F'))
         self.Amat = np.array(rows); self.Ar, self.Ai = self.Amat.real.copy(), self.Amat.imag.copy()
         # numerical compression error of effects from the subspace bound: ||QMQ - Q^M Q^|| <= 2 sin(theta)
-        self.d_a = 2*B['sin_theta']
+        self.d_a = 4*B['sin_theta']     # ||Q^ x Q^ - Q x Q|| <= 2 sin(theta); compressed effects: 2x that
 
     def probs(self, comps, crosstalk=0.0):
         """exact outcome probabilities of the untruncated grid state; optional nearest-neighbour
@@ -144,7 +144,7 @@ def build_feasible_set(S, X, Y, lo, hi, eps, method, c_extra=0.0):
     ms = S.m_set; m = len(lo); da = S.d_a
     toks = method.split('+'); base = toks[0]
     def aggregate(radius, sexp):
-        t = cp.Variable(m, nonneg=True); bounds[t.id] = 2.0
+        t = cp.Variable(m, nonneg=True); bounds[t.id] = float(1 + da + np.max(np.abs(hi)) + np.max(np.abs(lo)))
         cen = (lo+hi)/2; rad = (hi-lo)/2 + da
         return [sexp - cen <= t, cen - sexp <= t,
                 cp.sum(t[:ms]) <= radius + rad[:ms].sum(), cp.sum(t[ms:]) <= radius + rad[ms:].sum()]
@@ -159,7 +159,7 @@ def build_feasible_set(S, X, Y, lo, hi, eps, method, c_extra=0.0):
         # latent exact compressed probability z_a with |z_a - s_a| <= d_a Tr(sigma) <= d_a, eliminated
         # conservatively: x^2 <= 4 z w <= 4 (s + d_a) w and |p - s - w - x| <= u + c + d_a
         w = cp.Variable(m, nonneg=True); x = cp.Variable(m)
-        bounds[w.id] = 1.0; bounds[x.id] = 2.0
+        bounds[w.id] = 1.0; bounds[x.id] = float(2*np.sqrt(1 + 2*da)) + 1e-12
         zb = s_t + da
         C += [tr <= 1, tr >= 1-eps,
               cp.sum(w[:ms]) == 1 - tr, cp.sum(w[ms:]) == 1 - tr,

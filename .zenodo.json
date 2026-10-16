@@ -10,5 +10,5 @@
   ],
   "license": "MIT",
   "keywords": ["spatial entanglement", "finite apertures", "mode leakage", "prolate concentration", "semidefinite programming", "quantum certification"],
-  "version": "1.0.0"
+  "version": "1.1.0"
 }
